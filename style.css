@@ -247,6 +247,9 @@ body.mdui-theme-layout-dark .ct1-p {
 }
 .PostTitleFillPageBackGround {
 	z-index: 1;
+	background: url(https://hanada-info-img.oss-cn-shenzhen.aliyuncs.com/hanada4.jpg);
+    background-position: center center;
+    background-size: cover;
 }
 .PostMain {
 	position: absolute;
