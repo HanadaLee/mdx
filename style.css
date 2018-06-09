@@ -311,7 +311,6 @@ div.ArtMain0>article {
 article img {
 	height: auto;
 	max-width: 100%;
-	cursor: pointer;
 }
 article iframe,article embed,article video {
 	width: 100% !important;
@@ -2443,7 +2442,8 @@ article a.mdx-img-in-post-with-link:before {
 	}
 	.mdui-drawer-close {
 		transform: translateX(-310px);
-	}	
+	}
+}
 @media(max-width:800px) {
 	.PostTitle {
 		font-size: 37px;
@@ -2605,4 +2605,16 @@ img.wp-smiley {
 	width: 24px!important;
 	height: auto!important;
 	max-height: none!important;
+}
+    .mdui-btn-icon>.fa-pencil-square-o{
+        position: absolute;
+        left: 14px;
+        top: 12px;
+    }
+@media(min-width:747px) and (max-width: 959px){
+    .mdui-btn-icon>.fa-pencil-square-o{
+        position: absolute;
+        left: 10px;
+        top: 8px;
+    }
 }
