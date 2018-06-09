@@ -612,10 +612,10 @@ ul#mdx_menu>li a {
 	box-sizing: border-box;
 	padding: 20px;
 	color: #fff;
-	font-size: 17px;
+	font-size: 20px;
 }
 .side-info-oth {
-	color: hsla(0,0%,100%,.7);
+	color: #fff;
 	font-size: 13px;
 }
 li.current-menu-item,li.current_page_item {
