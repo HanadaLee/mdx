@@ -29,6 +29,9 @@ div.mdui-card>div>div>div>a {
 	color: #fff;
 	text-decoration: none;
 }
+.mdui-toolbar>* {
+    margin: 0 0;   
+}
 .click {
 	-webkit-transition: all .3s;
 	transition: all .3s;
@@ -103,7 +106,7 @@ body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body
 .postList {
 	padding-top: 5px;
 	width: 95%;
-	max-width: 750pt;
+	max-width: 1200px;
 	text-align: center;
 }
 .foot {
@@ -121,10 +124,14 @@ body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body
 .foot>a {
 	color: #464646;
 }
+
+.post-edit-link {
+    color:inherit;
+}
 .postDiv {
-	margin: 15px;
+	margin: 20px;
 	width: 100%;
-	max-width: 700px;
+	max-width: 1000px;
 }
 .staDiv {
 	min-height: 170px;
@@ -2003,6 +2010,9 @@ div.mdui-toolbar>.mdui-typo-headline {
 	margin: 0 2px!important;
 }
 .mdx-background-404 {
+    background: url(https://hanada-info-img.oss-cn-shenzhen.aliyuncs.com/hanada4.jpg);
+    background-position: center center;
+    background-size: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2410,14 +2420,14 @@ article a.mdx-img-in-post-with-link:before {
 }
 @media(max-width:2100px) {
 	.ArtMain0 {
-		width: 47%;
-		max-width: 850px;
+		width: 80%;
+		max-width: 1200px;
 	}
 }
 @media(max-width:1500px) {
 	.ArtMain0 {
 		width: 100%;
-		max-width: 680px;
+		max-width: 900px;
 	}
 }
 @media(min-width:1024px) {
@@ -2540,6 +2550,9 @@ article a.mdx-img-in-post-with-link:before {
 	}
 }
 @media(max-width:500px) {
+    .mdui-card-primary-title {
+     font-size:18px;   
+    }
 	.mdui-card-primary-subtitle {
 		display: none
 	}
