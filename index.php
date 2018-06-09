@@ -17,7 +17,7 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
       <div class="sideImg LazyLoad" data-original="<?php echo $mdx_side_img;?>">
       <?php if(get_option('mdx_night_style')=='true'){;?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('夜间模式开关','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(get_option('mdx_side_info')=='true'){;?>
       <?php if(get_option('mdx_side_head')!=''){;?>
@@ -33,6 +33,7 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
         <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true<?php if(get_option('mdx_open_side')=='true'){;?>,swipe:true<?php }?>}"><i class="mdui-icon material-icons">menu</i></button>
         <span class="mdui-typo-headline"><?php $mdx_logo_way=get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></span>
         <div class="mdui-toolbar-spacer"></div>
+        <button class="mdui-btn mdui-btn-icon" onclick="location.href='<?php echo home_url();?>/wp-admin/'"><i class="fa fa-cog"></i></button>
         <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
       </div>
     </div></header>

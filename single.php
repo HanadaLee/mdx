@@ -27,7 +27,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
     <div class="sideImg LazyLoad" data-original="<?php echo $mdx_side_img;?>">
       <?php if(get_option('mdx_night_style')=='true'){;?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e("切换日间/夜间模式","mdx");?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e("夜间模式开关","mdx");?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(get_option('mdx_side_info')=='true'){;?>
       <?php if(get_option('mdx_side_head')!=''){;?>
@@ -43,9 +43,8 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
             <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true<?php if(get_option('mdx_open_side')=='true'){;?>,swipe:true<?php }?>}"><i class="mdui-icon material-icons">menu</i></button>
                 <a href="<?php bloginfo('url');?>" class="mdui-typo-headline"><?php $mdx_logo_way=get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></a>
                 <div class="mdui-toolbar-spacer"></div>
-                <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#qrcode'}" mdui-tooltip="{content: '<?php _e("在其他设备上继续阅读","mdx");?>'}" id="oth-div"><i class="mdui-icon material-icons">&#xe326;</i></button>
-                <div class="mdui-menu" id="qrcode">
-                </div>
+                <?php echo edit_post_link(__('<button class="mdui-btn mdui-btn-icon"><i class="fa fa-pencil-square-o"></i></button>', 'clrs')); ?>
+                <!--<?php edit_post_link('<i class="fa fa-pencil-square-o"></i>', '<button class="mdui-btn mdui-btn-icon>"', '</button>'); ?>-->
                 <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
             </div>
         </div></header>
@@ -183,11 +182,11 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
 ?>
     <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
-        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面貌似旅游去了','mdx');?></span></span>
+        <span>404<span class="mdui-typo-headline"><?php _e('很抱歉，该页面不存在或已被删除。请确认您访问的页面地址是否正确。','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回首页</a>
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
         <div>
     </div>
@@ -207,11 +206,11 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
 ?>
     <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
-        <span><?php _e('诶呀...','mdx');?><span class="mdui-typo-headline"><?php _e('因相关法律法规，此文章暂时不予显示','mdx');?></span></span>
+        <span><?php _e('诶呀...','mdx');?><span class="mdui-typo-headline"><?php _e('因某些原因，此文章暂时停止访问。','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回首页</a>
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
         <div>
     </div>

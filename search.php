@@ -6,7 +6,7 @@
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
       <div class="sideImg" style="background-image:url(<?php echo $mdx_side_img;?>">
       <?php if(get_option('mdx_night_style')=='true'){;?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('夜间模式开关','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(get_option('mdx_side_info')=='true'){;?>
       <?php if(get_option('mdx_side_head')!=''){;?>
@@ -41,8 +41,8 @@
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">
       <br><br><br><i class="mdui-icon material-icons mdui-center mdx-search-empty">&#xe565;</i><br><br><br>
-      <h1 class="mdui-center mdx-search-empty-text"><?php _e('前方似乎禁止通行','mdx');?></h1>
-      <h2 class="mdui-center mdx-search-empty-text"><?php _e('什么也没找到，换个词搜搜试试？','mdx');?></h2><br><br>
+      <h1 class="mdui-center mdx-search-empty-text"><?php _e('没有找到任何内容','mdx');?></h1>
+      <h2 class="mdui-center mdx-search-empty-text"><?php _e('很抱歉，没有找到任何相关内容。请检查您输入的关键词是否正确。','mdx');?></h2><br><br>
       </main>
     <?php endif;?>
 <?php get_footer();?>

@@ -6,7 +6,7 @@
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
     <div class="sideImg LazyLoad" data-original="<?php echo $mdx_side_img;?>">
       <?php if(get_option('mdx_night_style')=='true'){;?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('夜间模式开关','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(get_option('mdx_side_info')=='true'){;?>
       <?php if(get_option('mdx_side_head')!=''){;?>
@@ -26,7 +26,7 @@
       </div>
     </div></header>
     <?php get_template_part('searchform')?>
-    <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php single_cat_title('',true);?><br><small><?php if(category_description()!=""){echo category_description();}else{_e('文章归档','mdx');}?></small></h1></div>
+    <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php single_cat_title('',true);?><br><small><?php if(category_description()!=""){echo category_description();}else{_e('','mdx');}?></small></h1></div>
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">
       <?php

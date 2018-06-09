@@ -5,7 +5,7 @@ add_theme_support('post-formats', array('image','link','status','video','audio')
 register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //初始化
-if(!get_option('mdx_first_init')){
+/*if(!get_option('mdx_first_init')){
     //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用
     if(function_exists('file_get_contents')){
         $opt = array(
@@ -20,7 +20,10 @@ if(!get_option('mdx_first_init')){
     }
     include_once('includes/admin_init_fn.php');
     include_once('includes/admin_init_style.php');
-}
+}*/
+
+//移除顶部工具条
+add_filter('show_admin_bar', '__return_false');
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
@@ -411,7 +414,7 @@ $GLOBALS['comment'] = $comment;?>
     <li class="mdui-list-item" id="li-comment-<?php comment_ID(); ?>">
     <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar($comment, 80);}?></div>
     <div class="mdui-list-item-content outbu" id="comment-<?php comment_ID();?>">
-    <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, 1)){echo '<span class="mdx-admin">'.__('博主','mdx').'</span>';}?></div>
+    <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, 1)){echo '<span class="mdx-admin">'.__('','mdx').'</span>';}?></div>
     <div class="mdui-list-item-text mdui-typo">
     <?php comment_text();?>
     </div><span class="mdx-reply-time"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')).__('前','mdx');?></span><?php comment_reply_link(array_merge($args,array('reply_text'=>'回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
@@ -420,7 +423,7 @@ $GLOBALS['comment'] = $comment;?>
 //回复的评论加@
 function comment_add_at( $comment_text, $comment=''){
     if( $comment->comment_parent > 0){
-	$comment_text='<a rel="nofollow" class="comment_at" href="#comment-'.$comment->comment_parent.'">@'.get_comment_author($comment->comment_parent).'：</a> '.$comment_text;
+	$comment_text='回复 <a rel="nofollow" class="comment_at" href="#comment-'.$comment->comment_parent.'">@'.get_comment_author($comment->comment_parent).'</a>： '.$comment_text;
     }
 	return $comment_text;
     }
@@ -470,7 +473,7 @@ if(!is_admin() && get_option('mdx_lazy_load_mode')=='speed'){
 
 //面包屑
 function mdx_breadcrumbs() {
-	$delimiter = ' » '; // 分隔符
+	$delimiter = ' > '; // 分隔符
 	$before = '<span class="current">'; // 在当前链接前插入
 	$after = '</span>'; // 在当前链接后插入
 	if(!is_home() && !is_front_page() || is_paged()){
