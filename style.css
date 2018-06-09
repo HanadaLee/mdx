@@ -2435,7 +2435,12 @@ article a.mdx-img-in-post-with-link:before {
 		right: 22px;
 		bottom: 22px;
 	}
-}
+	.mdui-drawer {
+		width:300px;
+	}
+	.mdui-drawer-close {
+		transform: translateX(-310px);
+	}	
 @media(max-width:800px) {
 	.PostTitle {
 		font-size: 37px;
